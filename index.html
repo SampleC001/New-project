@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>
+            Milestone Project
+        </title>
+         <!--this is the link to validate the form using javascript--> 
+       <script src="app.js"></script>
+       <script src="register.js"></script>
+        <!--This is the link to the CSS sheet for styling the website-->
+        <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <h1>
+               ONLINE SHORT COURSE REGISTRATION. 
+            </h1>
+            <h2>
+                Registration Form
+            </h2>
+            <form name="myForm" action= "/" onsubmit="return validateForm()" method="post" autocomplete="on">
+                <h2>Personal Details</h2><br>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="FirstName">
+                <label for="sname">Surname</label>
+                <input type="text" id="sname" name="Surname"><br>
+                <label for="Date of Birth">Date of Birth</label>
+                <input type="date" id="DoB" name="DateofBirth">
+                <!--This script prevents the user from entering future dates-->
+                <script>
+                    var today=new Date().toISOString().split('T')[0];
+                    document.getElementById("DoB").setAttribute("max",today);
+                </script>
+                <label for="gender">Gender</label>
+                <select name="gender" id="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Prefer Not to Say</option>
+                </select><br>
+                <label for="phone">Mobile number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="000-000-0000">
+                <label for="email">Student Email</label>
+                <input type="email" id="Email" name="Email"><br><br>
+                <h2>Address</h2><br>
+                <label for="sAddress1">Street Address 1</label>
+                <input type="text" id="sAddress1" name="StreetAddress1">
+                <label for="sAddress2">Street Address 2</label>
+                <input type="text" id="sAddress2" name="StreetAddress2"><br>
+                <label for="city">City</label>
+                <input type="text" id="city" name="City">
+                <label for="state">State</label>
+                <input type="text" id="state" name="State"><br><br>
+                <h2>Course Details</h2><br>
+                    <label for="school">School</label>
+                    <select name="school" id="School">
+                        <option value="Business">Business</option>
+                        <option value="Social Sciences">Social Sciences</option>
+                        <option value="Medicine">Medicine</option>
+                    </select><br>
+                    <label for="course">Course Title</label>
+                    <select name="course" id="Course">
+                        <option value="Operating Systems">Operating Systems</option>
+                        <option value="Project Management">Project Management</option>
+                        <option value="Health Leadership">Healthcare Leadership</option>
+                    </select><br><br>
+                <label for="psw">Password</label>
+                <input type="password" id="password" name="psw"><br>
+               
+                <!--The following line asks for the consent of the student, and they can either submit the details or cancel the submission-->
+                <p>By registering for the course, you agree to our terms and conditions</p>
+                <input type="Submit" value="Register">
+                
+                 <!--The following code clears the form-->   
+                <input type="reset" value="Cancel">
+            </form><br>
+            <p>
+                <!--There is a break between the content and the about us and contact buttons-->
+            <a href="about.html" class="button-link">About us</a>
+            <a href="contact.html" class="button-link">Contact Us</a>
+            </p>
+        </body>
+</html>
